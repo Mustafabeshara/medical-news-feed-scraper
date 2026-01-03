@@ -1,0 +1,486 @@
+# List your medical news sources here.
+# You can provide either a homepage `url` for auto-discovery, or explicit `feeds`.
+# Names are optional; if omitted, the domain will be used.
+#
+# TIPS FOR ADDING NEW SITES:
+# 1. First try with just the URL - the scraper will auto-discover feeds
+# 2. If no articles appear, search for "[site name] RSS feed" and add explicit feeds
+# 3. Some sites block scrapers - these may need alternative sources
+# 4. Sites returning 403 errors have bot detection - may not work reliably
+
+sites:
+  # === GENERAL MEDICAL NEWS ===
+  - name: WHO News
+    url: https://www.who.int/news
+    feeds:
+      - https://www.who.int/feeds/entity/mediacentre/news/en/rss.xml
+
+  - name: NIH News
+    feeds:
+      - https://www.nih.gov/news-releases/feed.xml
+
+  - name: CDC Newsroom
+    feeds:
+      - https://tools.cdc.gov/api/v2/resources/media/132608.rss
+      - https://www.cdc.gov/media/rss.xml
+
+  - name: Medscape
+    url: https://www.medscape.com
+    feeds:
+      - https://www.medscape.com/cx/rssfeeds/2684.xml
+
+  # === NEWS AGGREGATORS ===
+  - name: MedicalXpress
+    feeds:
+      - https://medicalxpress.com/rss-feed/
+
+  - name: News-Medical
+    url: https://www.news-medical.net
+    feeds:
+      - https://www.news-medical.net/syndication.axd
+
+  - name: ScienceDaily Health & Medicine
+    feeds:
+      - https://www.sciencedaily.com/rss/health_medicine.xml
+
+  - name: JAMA Network
+    feeds:
+      - https://jamanetwork.com/rss/site_3/67.xml
+
+  - name: STAT News
+    url: https://www.statnews.com
+    feeds:
+      - https://www.statnews.com/feed/
+
+  - name: BMJ News
+    url: https://www.bmj.com/news
+    feeds:
+      - https://www.bmj.com/rss/recent.xml
+
+  - name: Healthline Health News
+    url: https://www.healthline.com/health-news
+
+  - name: Healthcare Dive
+    url: https://www.healthcaredive.com
+    feeds:
+      - https://www.healthcaredive.com/feeds/news/
+
+  - name: Healio
+    url: https://www.healio.com
+    feeds:
+      - https://www.healio.com/rss
+
+  - name: MobiHealthNews
+    url: https://www.mobihealthnews.com
+    feeds:
+      - https://www.mobihealthnews.com/feed
+
+  # === CARDIOLOGY ===
+  # Medscape specialty RSS feeds discontinued in late 2024
+  # - name: Medscape Cardiology
+  #   feeds:
+  #     - https://www.medscape.com/cx/rssfeeds/2165.xml
+
+  - name: TCTMD
+    url: https://www.tctmd.com
+    feeds:
+      - https://www.tctmd.com/rss/feed
+      - https://www.tctmd.com/feed/rss.xml
+
+  - name: SCAI
+    url: https://scai.org
+    feeds:
+      - https://scai.org/rss.xml
+
+  - name: DI Cardiology
+    url: https://www.dicardiology.com
+    feeds:
+      - https://www.dicardiology.com/rss.xml
+
+  - name: Cardiac Interventions Today
+    url: https://citoday.com
+    feeds:
+      - https://citoday.com/feed/
+
+  - name: ESC Press Office
+    url: https://www.escardio.org/The-ESC/Press-Office
+    feeds:
+      - https://www.escardio.org/The-ESC/Press-Office/rss
+
+  - name: JAMA Cardiology
+    feeds:
+      - https://jamanetwork.com/rss/site_192/184.xml
+
+  - name: Cardiology Advisor
+    url: https://www.thecardiologyadvisor.com
+    feeds:
+      - https://www.thecardiologyadvisor.com/feed/
+
+  # Healio discontinued RSS feeds - using email/social instead
+  # - name: Healio Cardiology
+  #   feeds:
+  #     - https://www.healio.com/news/cardiology/rss
+
+  # === NEUROSURGERY & NEUROLOGY ===
+  - name: AANS Neurosurgeon
+    url: https://www.aans.org/en/AANS-Neurosurgeon
+    feeds:
+      - https://www.aans.org/en/AANS-Neurosurgeon/rss
+
+  - name: JAMA Neurology
+    feeds:
+      - https://jamanetwork.com/rss/site_16/72.xml
+
+  - name: Neurology Today
+    url: https://journals.lww.com/neurotodayonline
+
+  # Medscape specialty RSS feeds discontinued in late 2024
+  # - name: Medscape Neurology
+  #   feeds:
+  #     - https://www.medscape.com/cx/rssfeeds/2141.xml
+
+  # - name: Healio Neurology
+  #   feeds:
+  #     - https://www.healio.com/news/neurology/rss
+
+  - name: Practical Neurology
+    url: https://practicalneurology.com
+    feeds:
+      - https://practicalneurology.com/feed/
+
+  - name: Neurovascular Today
+    url: https://neurovasculartoday.com
+    feeds:
+      - https://neurovasculartoday.com/feed/
+
+  # === ORTHOPEDICS & SPINE ===
+  - name: RYOrtho
+    url: https://ryortho.com
+    feeds:
+      - https://ryortho.com/feed/
+
+  - name: Ortho Spine News
+    url: https://orthospinenews.com
+    feeds:
+      - https://orthospinenews.com/feed/
+
+  - name: Becker's Spine Review
+    url: https://www.beckersspine.com
+    feeds:
+      - https://www.beckersspine.com/feed/
+
+  - name: OrthoBuzz (JBJS)
+    url: https://orthobuzz.jbjs.org
+    feeds:
+      - https://orthobuzz.jbjs.org/feed/
+
+  - name: Spine Market Group
+    url: https://thespinemarketgroup.com
+    feeds:
+      - https://thespinemarketgroup.com/feed/
+
+  # - name: Healio Orthopedics
+  #   feeds:
+  #     - https://www.healio.com/news/orthopedics/rss
+
+  - name: AAOS Now
+    url: https://www.aaos.org/aaosnow/
+
+  # === RADIOLOGY & IMAGING ===
+  - name: RSNA News
+    url: https://www.rsna.org/news
+    feeds:
+      - https://www.rsna.org/en/news/rss
+
+  - name: Diagnostic Imaging
+    url: https://www.diagnosticimaging.com
+    feeds:
+      - https://www.diagnosticimaging.com/rss
+
+  - name: Radiology Today
+    url: https://www.radiologytoday.net
+    feeds:
+      - https://www.radiologytoday.net/rss.xml
+
+  - name: Imaging Technology News
+    url: https://www.itnonline.com
+    feeds:
+      - https://www.itnonline.com/rss.xml
+
+  # JVIR RSS feed discontinued
+  # - name: JVIR
+  #   feeds:
+  #     - https://www.jvir.org/rss/feed
+
+  - name: Interventional News
+    url: https://interventionalnews.com
+    feeds:
+      - https://interventionalnews.com/feed/
+
+  - name: SIR
+    url: https://www.sirweb.org
+
+  # AuntMinnie RSS feed discontinued - site requires login
+  # - name: AuntMinnie
+  #   feeds:
+  #     - https://www.auntminnie.com/rss/specialty/general-radiology.xml
+
+  # === ONCOLOGY ===
+  - name: OncLive
+    url: https://www.onclive.com
+    feeds:
+      - https://www.onclive.com/rss
+
+  # Medscape specialty RSS feeds discontinued in late 2024
+  # - name: Medscape Oncology
+  #   feeds:
+  #     - https://www.medscape.com/cx/rssfeeds/2169.xml
+
+  - name: Cancer Network News
+    url: https://www.cancernetwork.com/news
+    feeds:
+      - https://www.cancernetwork.com/rss
+
+  - name: OncoDaily
+    url: https://oncodaily.com
+    feeds:
+      - https://oncodaily.com/feed/
+
+  # Clinical Oncology News - site blocks scrapers
+  # - name: Clinical Oncology News
+  #   url: https://www.clinicaloncology.com
+
+  - name: ESMO Oncology News
+    url: https://www.esmo.org/oncology-news
+    feeds:
+      - https://www.esmo.org/oncology-news/rss
+
+  # - name: Healio Hematology-Oncology
+  #   feeds:
+  #     - https://www.healio.com/news/hematology-oncology/rss
+
+  - name: ASCO Post
+    url: https://ascopost.com
+    feeds:
+      - https://ascopost.com/feed/
+
+  # === GASTROENTEROLOGY ===
+  # Gastroenterology & Endoscopy News - RSS discontinued, site blocks scrapers
+  # - name: Gastroenterology & Endoscopy News
+  #   url: https://www.gastroendonews.com
+  #   feeds:
+  #     - https://www.gastroendonews.com/rss
+
+  - name: AGA News
+    url: https://gastro.org/news
+    feeds:
+      - https://gastro.org/feed/
+
+  - name: MDEdge GI & Hepatology News
+    url: https://www.mdedge.com/gihepnews
+    feeds:
+      - https://www.mdedge.com/gihepnews/rss.xml
+
+  # - name: Healio Gastroenterology
+  #   feeds:
+  #     - https://www.healio.com/news/gastroenterology/rss
+
+  # Gastroenterology Journal RSS discontinued
+  # - name: Gastroenterology Journal
+  #   feeds:
+  #     - https://www.gastrojournal.org/rss/feed
+
+  - name: Becker's ASC Gastroenterology & Endoscopy
+    url: https://www.beckersasc.com/gastroenterology-and-endoscopy
+    feeds:
+      - https://www.beckersasc.com/gastroenterology-and-endoscopy/feed/
+
+  # === UROLOGY ===
+  - name: Urology Times
+    url: https://www.urologytimes.com
+    feeds:
+      - https://www.urologytimes.com/rss
+
+  - name: UroToday
+    url: https://www.urotoday.com
+
+  # Medscape specialty RSS feeds discontinued in late 2024
+  # - name: Medscape Urology
+  #   feeds:
+  #     - https://www.medscape.com/cx/rssfeeds/2186.xml
+
+  # Site inaccessible (blocks scrapers)
+  # - name: AUA Newsroom
+  #   url: https://www.auanet.org/about-us/aua-newsroom
+
+  - name: Renal & Urology News
+    url: https://www.renalandurologynews.com
+    feeds:
+      - https://www.renalandurologynews.com/feed/
+
+  # Site inaccessible
+  # - name: European Urology Today
+  #   url: https://uroweb.org/european-urology-today
+
+  # === PULMONOLOGY & CARDIOTHORACIC ===
+  # Medscape specialty RSS feeds discontinued in late 2024
+  # - name: Medscape Pulmonary Medicine
+  #   feeds:
+  #     - https://www.medscape.com/cx/rssfeeds/2159.xml
+
+  - name: STS Newsroom
+    url: https://www.sts.org/news/newsroom
+
+  - name: Chest Physician
+    url: https://www.mdedge.com/chestphysician
+    feeds:
+      - https://www.mdedge.com/chestphysician/rss.xml
+
+  # - name: Healio Pulmonology
+  #   feeds:
+  #     - https://www.healio.com/news/pulmonology/rss
+
+  # Site inaccessible
+  # - name: CTSNet News
+  #   url: https://www.ctsnet.org/news
+
+  # === VASCULAR SURGERY ===
+  - name: Vascular Specialist Online
+    url: https://vascularspecialistonline.com
+    feeds:
+      - https://vascularspecialistonline.com/feed/
+
+  - name: Vascular News
+    url: https://vascularnews.com
+    feeds:
+      - https://vascularnews.com/feed/
+
+  - name: Endovascular Today
+    url: https://evtoday.com
+    feeds:
+      - https://evtoday.com/feed/
+
+  - name: SVS News
+    url: https://vascular.org/news
+
+  # Journal of Vascular Surgery RSS discontinued
+  # - name: Journal of Vascular Surgery
+  #   feeds:
+  #     - https://www.jvascsurg.org/rss/feed
+
+  # === OPHTHALMOLOGY ===
+  - name: EyeWire News
+    url: https://eyewire.news
+    feeds:
+      - https://eyewire.news/feed/
+
+  - name: Ophthalmology Times
+    url: https://www.ophthalmologytimes.com
+    feeds:
+      - https://www.ophthalmologytimes.com/rss
+
+  - name: AAO Newsroom
+    url: https://www.aao.org/newsroom/news-releases
+
+  # - name: Healio Ophthalmology
+  #   feeds:
+  #     - https://www.healio.com/news/ophthalmology/rss
+
+  - name: Review of Ophthalmology
+    url: https://www.reviewofophthalmology.com
+    feeds:
+      - https://www.reviewofophthalmology.com/rss
+
+  - name: Ophthalmology Breaking News
+    url: https://www.ophthalmologybreakingnews.com
+
+  # === ENT ===
+  - name: ENT & Audiology News
+    url: https://www.entandaudiologynews.com
+    feeds:
+      - https://www.entandaudiologynews.com/feed/
+
+  - name: ENT Today
+    url: https://www.enttoday.org
+    feeds:
+      - https://www.enttoday.org/feed/
+
+  - name: AAO-HNS Newsroom
+    url: https://www.entnet.org/about-us/newsroom/
+
+  - name: JAMA Otolaryngology
+    feeds:
+      - https://jamanetwork.com/rss/site_18/74.xml
+
+  - name: The Hearing Journal
+    url: https://journals.lww.com/thehearingjournal
+
+  # === ANESTHESIOLOGY & PAIN ===
+  # Anesthesiology News - RSS discontinued, site blocks scrapers
+  # - name: Anesthesiology News
+  #   url: https://www.anesthesiologynews.com
+  #   feeds:
+  #     - https://www.anesthesiologynews.com/rss
+
+  # Pain Medicine News - RSS discontinued, site blocks scrapers
+  # - name: Pain Medicine News
+  #   url: https://www.painmedicinenews.com
+  #   feeds:
+  #     - https://www.painmedicinenews.com/rss
+
+  - name: Pain Physician Journal
+    url: https://www.painphysicianjournal.com
+
+  - name: ASA Monitor
+    url: https://monitor.pubs.asahq.org
+
+  - name: Anesthesiology (Journal)
+    url: https://pubs.asahq.org/anesthesiology
+
+  # === EMERGENCY MEDICINE ===
+  - name: Emergency Medicine News
+    url: https://www.em-news.com
+    feeds:
+      - https://www.em-news.com/rss
+
+  - name: ACEP Now
+    url: https://www.acepnow.com
+    feeds:
+      - https://www.acepnow.com/feed/
+
+  - name: EMCrit
+    url: https://emcrit.org
+    feeds:
+      - https://emcrit.org/feed/
+
+  # Site inaccessible (domain expired or moved)
+  # - name: Trauma System News
+  #   url: https://www.traumasystemnews.com
+
+  - name: Journal of Trauma
+    url: https://journals.lww.com/jtrauma
+
+  # - name: Healio Emergency Medicine
+  #   feeds:
+  #     - https://www.healio.com/news/emergency-medicine/rss
+
+  # === SURGICAL ROBOTICS ===
+  # Site inaccessible (domain expired or moved)
+  # - name: Robotic Surgery Today
+  #   url: https://roboticsurgerytoday.com
+
+  - name: Becker's Spine Robotics
+    url: https://www.beckersspine.com/robotics
+    feeds:
+      - https://www.beckersspine.com/robotics/feed/
+
+  - name: The Robot Report (Medical Robotics)
+    url: https://www.therobotreport.com/category/medical-robotics/
+    feeds:
+      - https://www.therobotreport.com/feed/
+
+  - name: IJCARS (Springer)
+    url: https://link.springer.com/journal/11701
+
+  - name: Intuitive Surgical Newsroom
+    url: https://www.intuitive.com/en-us/about-us/newsroom
