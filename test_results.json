@@ -1,0 +1,613 @@
+{
+  "total": 76,
+  "working": 20,
+  "errors": 39,
+  "no_feeds": 17,
+  "total_articles": 1362,
+  "working_sites": [
+    {
+      "name": "ScienceDaily Health & Medicine",
+      "articles": 60
+    },
+    {
+      "name": "Healthcare Dive",
+      "articles": 10
+    },
+    {
+      "name": "MobiHealthNews",
+      "articles": 6
+    },
+    {
+      "name": "DI Cardiology",
+      "articles": 10
+    },
+    {
+      "name": "RYOrtho",
+      "articles": 10
+    },
+    {
+      "name": "Ortho Spine News",
+      "articles": 10
+    },
+    {
+      "name": "Becker's Spine Review",
+      "articles": 10
+    },
+    {
+      "name": "Spine Market Group",
+      "articles": 27
+    },
+    {
+      "name": "Diagnostic Imaging",
+      "articles": 30
+    },
+    {
+      "name": "Radiology Today",
+      "articles": 9
+    },
+    {
+      "name": "Imaging Technology News",
+      "articles": 10
+    },
+    {
+      "name": "OncLive",
+      "articles": 30
+    },
+    {
+      "name": "Cancer Network News",
+      "articles": 30
+    },
+    {
+      "name": "OncoDaily",
+      "articles": 10
+    },
+    {
+      "name": "Becker's ASC Gastroenterology & Endoscopy",
+      "articles": 10
+    },
+    {
+      "name": "Urology Times",
+      "articles": 30
+    },
+    {
+      "name": "Vascular Specialist Online",
+      "articles": 1000
+    },
+    {
+      "name": "ENT Today",
+      "articles": 10
+    },
+    {
+      "name": "EMCrit",
+      "articles": 40
+    },
+    {
+      "name": "Becker's Spine Robotics",
+      "articles": 10
+    }
+  ],
+  "error_sites": [
+    {
+      "name": "WHO News",
+      "feeds": [
+        {
+          "feed_url": "https://www.who.int/feeds/entity/mediacentre/news/en/rss.xml",
+          "status": "error",
+          "articles": 0,
+          "status_code": 0,
+          "error": "Cannot connect to host www.who.int:443 ssl:default [None]"
+        }
+      ]
+    },
+    {
+      "name": "NIH News",
+      "feeds": [
+        {
+          "feed_url": "https://www.nih.gov/news-releases/feed.xml",
+          "status": "error",
+          "articles": 0,
+          "status_code": 0,
+          "error": "Cannot connect to host www.nih.gov:443 ssl:default [None]"
+        }
+      ]
+    },
+    {
+      "name": "CDC Newsroom",
+      "feeds": [
+        {
+          "feed_url": "https://tools.cdc.gov/api/v2/resources/media/132608.rss",
+          "status": "error",
+          "articles": 0,
+          "status_code": 0,
+          "error": "Cannot connect to host tools.cdc.gov:443 ssl:default [None]"
+        },
+        {
+          "feed_url": "https://www.cdc.gov/media/rss.xml",
+          "status": "error",
+          "articles": 0,
+          "status_code": 0,
+          "error": "Cannot connect to host www.cdc.gov:443 ssl:default [None]"
+        }
+      ]
+    },
+    {
+      "name": "Medscape",
+      "feeds": [
+        {
+          "feed_url": "https://www.medscape.com/cx/rssfeeds/2684.xml",
+          "status": "error",
+          "articles": 0,
+          "status_code": 0,
+          "error": "Cannot connect to host www.medscape.com:443 ssl:default [None]"
+        }
+      ]
+    },
+    {
+      "name": "MedicalXpress",
+      "feeds": [
+        {
+          "feed_url": "https://medicalxpress.com/rss-feed/",
+          "status": "error",
+          "articles": 0,
+          "status_code": 0,
+          "error": "Cannot connect to host medicalxpress.com:443 ssl:default [None]"
+        }
+      ]
+    },
+    {
+      "name": "News-Medical",
+      "feeds": [
+        {
+          "feed_url": "https://www.news-medical.net/syndication.axd",
+          "status": "error",
+          "articles": 0,
+          "status_code": 0,
+          "error": "Cannot connect to host www.news-medical.net:443 ssl:default [None]"
+        }
+      ]
+    },
+    {
+      "name": "JAMA Network",
+      "feeds": [
+        {
+          "feed_url": "https://jamanetwork.com/rss/site_3/67.xml",
+          "status": "error",
+          "articles": 0,
+          "status_code": 0,
+          "error": "Cannot connect to host jamanetwork.com:443 ssl:default [None]"
+        }
+      ]
+    },
+    {
+      "name": "STAT News",
+      "feeds": [
+        {
+          "feed_url": "https://www.statnews.com/feed/",
+          "status": "error",
+          "articles": 0,
+          "status_code": 0,
+          "error": "Cannot connect to host www.statnews.com:443 ssl:default [None]"
+        }
+      ]
+    },
+    {
+      "name": "BMJ News",
+      "feeds": [
+        {
+          "feed_url": "https://www.bmj.com/rss/recent.xml",
+          "status": "error",
+          "articles": 0,
+          "status_code": 0,
+          "error": "Cannot connect to host www.bmj.com:443 ssl:default [None]"
+        }
+      ]
+    },
+    {
+      "name": "Healio",
+      "feeds": [
+        {
+          "feed_url": "https://www.healio.com/rss",
+          "status": "error",
+          "articles": 0,
+          "status_code": 500
+        }
+      ]
+    },
+    {
+      "name": "TCTMD",
+      "feeds": [
+        {
+          "feed_url": "https://www.tctmd.com/rss/feed",
+          "status": "error",
+          "articles": 0,
+          "status_code": 403
+        },
+        {
+          "feed_url": "https://www.tctmd.com/feed/rss.xml",
+          "status": "error",
+          "articles": 0,
+          "status_code": 403
+        }
+      ]
+    },
+    {
+      "name": "SCAI",
+      "feeds": [
+        {
+          "feed_url": "https://scai.org/rss.xml",
+          "status": "error",
+          "articles": 0,
+          "status_code": 403
+        }
+      ]
+    },
+    {
+      "name": "Cardiac Interventions Today",
+      "feeds": [
+        {
+          "feed_url": "https://citoday.com/feed/",
+          "status": "error",
+          "articles": 0,
+          "status_code": 404
+        }
+      ]
+    },
+    {
+      "name": "ESC Press Office",
+      "feeds": [
+        {
+          "feed_url": "https://www.escardio.org/The-ESC/Press-Office/rss",
+          "status": "working",
+          "articles": 0,
+          "status_code": 200
+        }
+      ]
+    },
+    {
+      "name": "JAMA Cardiology",
+      "feeds": [
+        {
+          "feed_url": "https://jamanetwork.com/rss/site_192/184.xml",
+          "status": "error",
+          "articles": 0,
+          "status_code": 403
+        }
+      ]
+    },
+    {
+      "name": "Cardiology Advisor",
+      "feeds": [
+        {
+          "feed_url": "https://www.thecardiologyadvisor.com/feed/",
+          "status": "error",
+          "articles": 0,
+          "status_code": 403
+        }
+      ]
+    },
+    {
+      "name": "AANS Neurosurgeon",
+      "feeds": [
+        {
+          "feed_url": "https://www.aans.org/en/AANS-Neurosurgeon/rss",
+          "status": "error",
+          "articles": 0,
+          "status_code": 403
+        }
+      ]
+    },
+    {
+      "name": "JAMA Neurology",
+      "feeds": [
+        {
+          "feed_url": "https://jamanetwork.com/rss/site_16/72.xml",
+          "status": "error",
+          "articles": 0,
+          "status_code": 403
+        }
+      ]
+    },
+    {
+      "name": "Practical Neurology",
+      "feeds": [
+        {
+          "feed_url": "https://practicalneurology.com/feed/",
+          "status": "error",
+          "articles": 0,
+          "status_code": 404
+        }
+      ]
+    },
+    {
+      "name": "Neurovascular Today",
+      "feeds": [
+        {
+          "feed_url": "https://neurovasculartoday.com/feed/",
+          "status": "error",
+          "articles": 0,
+          "status_code": 0,
+          "error": "Cannot connect to host neurovasculartoday.com:443 ssl:default [Name or service not known]"
+        }
+      ]
+    },
+    {
+      "name": "OrthoBuzz (JBJS)",
+      "feeds": [
+        {
+          "feed_url": "https://orthobuzz.jbjs.org/feed/",
+          "status": "error",
+          "articles": 0,
+          "status_code": 403
+        }
+      ]
+    },
+    {
+      "name": "RSNA News",
+      "feeds": [
+        {
+          "feed_url": "https://www.rsna.org/en/news/rss",
+          "status": "error",
+          "articles": 0,
+          "status_code": 404
+        }
+      ]
+    },
+    {
+      "name": "Interventional News",
+      "feeds": [
+        {
+          "feed_url": "https://interventionalnews.com/feed/",
+          "status": "error",
+          "articles": 0,
+          "status_code": 403
+        }
+      ]
+    },
+    {
+      "name": "ESMO Oncology News",
+      "feeds": [
+        {
+          "feed_url": "https://www.esmo.org/oncology-news/rss",
+          "status": "error",
+          "articles": 0,
+          "status_code": 404
+        }
+      ]
+    },
+    {
+      "name": "ASCO Post",
+      "feeds": [
+        {
+          "feed_url": "https://ascopost.com/feed/",
+          "status": "working",
+          "articles": 0,
+          "status_code": 200
+        }
+      ]
+    },
+    {
+      "name": "AGA News",
+      "feeds": [
+        {
+          "feed_url": "https://gastro.org/feed/",
+          "status": "error",
+          "articles": 0,
+          "status_code": 403
+        }
+      ]
+    },
+    {
+      "name": "MDEdge GI & Hepatology News",
+      "feeds": [
+        {
+          "feed_url": "https://www.mdedge.com/gihepnews/rss.xml",
+          "status": "working",
+          "articles": 0,
+          "status_code": 200
+        }
+      ]
+    },
+    {
+      "name": "Renal & Urology News",
+      "feeds": [
+        {
+          "feed_url": "https://www.renalandurologynews.com/feed/",
+          "status": "error",
+          "articles": 0,
+          "status_code": 403
+        }
+      ]
+    },
+    {
+      "name": "Chest Physician",
+      "feeds": [
+        {
+          "feed_url": "https://www.mdedge.com/chestphysician/rss.xml",
+          "status": "error",
+          "articles": 0,
+          "status_code": 403
+        }
+      ]
+    },
+    {
+      "name": "Vascular News",
+      "feeds": [
+        {
+          "feed_url": "https://vascularnews.com/feed/",
+          "status": "error",
+          "articles": 0,
+          "status_code": 403
+        }
+      ]
+    },
+    {
+      "name": "Endovascular Today",
+      "feeds": [
+        {
+          "feed_url": "https://evtoday.com/feed/",
+          "status": "error",
+          "articles": 0,
+          "status_code": 404
+        }
+      ]
+    },
+    {
+      "name": "EyeWire News",
+      "feeds": [
+        {
+          "feed_url": "https://eyewire.news/feed/",
+          "status": "error",
+          "articles": 0,
+          "status_code": 404
+        }
+      ]
+    },
+    {
+      "name": "Ophthalmology Times",
+      "feeds": [
+        {
+          "feed_url": "https://www.ophthalmologytimes.com/rss",
+          "status": "error",
+          "articles": 0,
+          "status_code": 404
+        }
+      ]
+    },
+    {
+      "name": "Review of Ophthalmology",
+      "feeds": [
+        {
+          "feed_url": "https://www.reviewofophthalmology.com/rss",
+          "status": "error",
+          "articles": 0,
+          "status_code": 404
+        }
+      ]
+    },
+    {
+      "name": "ENT & Audiology News",
+      "feeds": [
+        {
+          "feed_url": "https://www.entandaudiologynews.com/feed/",
+          "status": "working",
+          "articles": 0,
+          "status_code": 200
+        }
+      ]
+    },
+    {
+      "name": "JAMA Otolaryngology",
+      "feeds": [
+        {
+          "feed_url": "https://jamanetwork.com/rss/site_18/74.xml",
+          "status": "error",
+          "articles": 0,
+          "status_code": 403
+        }
+      ]
+    },
+    {
+      "name": "Emergency Medicine News",
+      "feeds": [
+        {
+          "feed_url": "https://www.em-news.com/rss",
+          "status": "error",
+          "articles": 0,
+          "status_code": 403
+        }
+      ]
+    },
+    {
+      "name": "ACEP Now",
+      "feeds": [
+        {
+          "feed_url": "https://www.acepnow.com/feed/",
+          "status": "error",
+          "articles": 0,
+          "status_code": 403
+        }
+      ]
+    },
+    {
+      "name": "The Robot Report (Medical Robotics)",
+      "feeds": [
+        {
+          "feed_url": "https://www.therobotreport.com/feed/",
+          "status": "error",
+          "articles": 0,
+          "status_code": 403
+        }
+      ]
+    }
+  ],
+  "no_feed_sites": [
+    {
+      "name": "Healthline Health News",
+      "url": "https://www.healthline.com/health-news"
+    },
+    {
+      "name": "Neurology Today",
+      "url": "https://journals.lww.com/neurotodayonline"
+    },
+    {
+      "name": "AAOS Now",
+      "url": "https://www.aaos.org/aaosnow/"
+    },
+    {
+      "name": "SIR",
+      "url": "https://www.sirweb.org"
+    },
+    {
+      "name": "UroToday",
+      "url": "https://www.urotoday.com"
+    },
+    {
+      "name": "STS Newsroom",
+      "url": "https://www.sts.org/news/newsroom"
+    },
+    {
+      "name": "SVS News",
+      "url": "https://vascular.org/news"
+    },
+    {
+      "name": "AAO Newsroom",
+      "url": "https://www.aao.org/newsroom/news-releases"
+    },
+    {
+      "name": "Ophthalmology Breaking News",
+      "url": "https://www.ophthalmologybreakingnews.com"
+    },
+    {
+      "name": "AAO-HNS Newsroom",
+      "url": "https://www.entnet.org/about-us/newsroom/"
+    },
+    {
+      "name": "The Hearing Journal",
+      "url": "https://journals.lww.com/thehearingjournal"
+    },
+    {
+      "name": "Pain Physician Journal",
+      "url": "https://www.painphysicianjournal.com"
+    },
+    {
+      "name": "ASA Monitor",
+      "url": "https://monitor.pubs.asahq.org"
+    },
+    {
+      "name": "Anesthesiology (Journal)",
+      "url": "https://pubs.asahq.org/anesthesiology"
+    },
+    {
+      "name": "Journal of Trauma",
+      "url": "https://journals.lww.com/jtrauma"
+    },
+    {
+      "name": "IJCARS (Springer)",
+      "url": "https://link.springer.com/journal/11701"
+    },
+    {
+      "name": "Intuitive Surgical Newsroom",
+      "url": "https://www.intuitive.com/en-us/about-us/newsroom"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+Testing 47 updated sites...
+
+✅ ScienceDaily Health & Medicine: 60 articles
+🌐 Healthline Health News: URL only (browser scraping)
+✅ Healthcare Dive: 10 articles
+✅ MobiHealthNews: 6 articles
+✅ DI Cardiology: 10 articles
+🌐 Neurology Today: URL only (browser scraping)
+✅ RYOrtho: 10 articles
+✅ Ortho Spine News: 10 articles
+✅ Becker's Spine Review: 10 articles
+✅ Spine Market Group: 27 articles
+🌐 AAOS Now: URL only (browser scraping)
+✅ Diagnostic Imaging: 30 articles
+✅ Radiology Today: 9 articles
+✅ Imaging Technology News: 10 articles
+🌐 SIR: URL only (browser scraping)
+✅ OncLive: 30 articles
+✅ Cancer Network News: 30 articles
+✅ OncoDaily: 10 articles
+✅ Becker's ASC Gastroenterology & Endoscopy: 10 articles
+✅ Urology Times: 30 articles
+🌐 UroToday: URL only (browser scraping)
+🌐 STS Newsroom: URL only (browser scraping)
+✅ Vascular Specialist Online: 1000 articles
+🌐 SVS News: URL only (browser scraping)
+🌐 AAO Newsroom: URL only (browser scraping)
+🌐 Ophthalmology Breaking News: URL only (browser scraping)
+✅ ENT Today: 10 articles
+🌐 AAO-HNS Newsroom: URL only (browser scraping)
+🌐 The Hearing Journal: URL only (browser scraping)
+🌐 Pain Physician Journal: URL only (browser scraping)
+🌐 ASA Monitor: URL only (browser scraping)
+🌐 Anesthesiology (Journal): URL only (browser scraping)
+✅ EMCrit: 40 articles
+🌐 Journal of Trauma: URL only (browser scraping)
+✅ Becker's Spine Robotics: 10 articles
+🌐 IJCARS (Springer): URL only (browser scraping)
+🌐 Intuitive Surgical Newsroom: URL only (browser scraping)
+✅ FiercePharma: 25 articles
+⚠️  FierceBiotech: 0 articles
+✅ Drugs.com Medical News: 40 articles
+⚠️  FDA Press Announcements: 0 articles
+⚠️  European Medicines Agency: 0 articles
+⚠️  MedlinePlus Health News: 0 articles
+✅ KFF Health News: 10 articles
+⚠️  Medical Device Network: 0 articles
+⚠️  Medical Daily: 0 articles
+⚠️  NIH Directors Blog: 0 articles
+
+============================================================
+Working RSS feeds: 23/30
+Total articles: 1,437
+URL-only sites: 17

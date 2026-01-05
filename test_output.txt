@@ -1,0 +1,257 @@
+Testing ALL 76 sites...
+
+This may take a few minutes...
+
+Testing batch 1/8...
+Testing batch 2/8...
+Testing batch 3/8...
+Testing batch 4/8...
+Testing batch 5/8...
+Testing batch 6/8...
+Testing batch 7/8...
+Testing batch 8/8...
+
+================================================================================
+DETAILED RESULTS
+================================================================================
+
+❌ WHO News
+   └─ error: 0 articles (HTTP 0) - Cannot connect to host www.who.int:443 ssl:default
+
+❌ NIH News
+   └─ error: 0 articles (HTTP 0) - Cannot connect to host www.nih.gov:443 ssl:default
+
+❌ CDC Newsroom
+   └─ error: 0 articles (HTTP 0) - Cannot connect to host tools.cdc.gov:443 ssl:defau
+   └─ error: 0 articles (HTTP 0) - Cannot connect to host www.cdc.gov:443 ssl:default
+
+❌ Medscape
+   └─ error: 0 articles (HTTP 0) - Cannot connect to host www.medscape.com:443 ssl:de
+
+❌ MedicalXpress
+   └─ error: 0 articles (HTTP 0) - Cannot connect to host medicalxpress.com:443 ssl:d
+
+❌ News-Medical
+   └─ error: 0 articles (HTTP 0) - Cannot connect to host www.news-medical.net:443 ss
+
+✅ ScienceDaily Health & Medicine
+   └─ working: 60 articles (HTTP 200)
+
+❌ JAMA Network
+   └─ error: 0 articles (HTTP 0) - Cannot connect to host jamanetwork.com:443 ssl:def
+
+❌ STAT News
+   └─ error: 0 articles (HTTP 0) - Cannot connect to host www.statnews.com:443 ssl:de
+
+❌ BMJ News
+   └─ error: 0 articles (HTTP 0) - Cannot connect to host www.bmj.com:443 ssl:default
+
+⚠️ Healthline Health News
+   └─ No RSS feeds configured (URL only)
+
+✅ Healthcare Dive
+   └─ working: 10 articles (HTTP 200)
+
+❌ Healio
+   └─ error: 0 articles (HTTP 500)
+
+✅ MobiHealthNews
+   └─ working: 6 articles (HTTP 200)
+
+❌ TCTMD
+   └─ error: 0 articles (HTTP 403)
+   └─ error: 0 articles (HTTP 403)
+
+❌ SCAI
+   └─ error: 0 articles (HTTP 403)
+
+✅ DI Cardiology
+   └─ working: 10 articles (HTTP 200)
+
+❌ Cardiac Interventions Today
+   └─ error: 0 articles (HTTP 404)
+
+❌ ESC Press Office
+   └─ working: 0 articles (HTTP 200)
+
+❌ JAMA Cardiology
+   └─ error: 0 articles (HTTP 403)
+
+❌ Cardiology Advisor
+   └─ error: 0 articles (HTTP 403)
+
+❌ AANS Neurosurgeon
+   └─ error: 0 articles (HTTP 403)
+
+❌ JAMA Neurology
+   └─ error: 0 articles (HTTP 403)
+
+⚠️ Neurology Today
+   └─ No RSS feeds configured (URL only)
+
+❌ Practical Neurology
+   └─ error: 0 articles (HTTP 404)
+
+❌ Neurovascular Today
+   └─ error: 0 articles (HTTP 0) - Cannot connect to host neurovasculartoday.com:443 
+
+✅ RYOrtho
+   └─ working: 10 articles (HTTP 200)
+
+✅ Ortho Spine News
+   └─ working: 10 articles (HTTP 200)
+
+✅ Becker's Spine Review
+   └─ working: 10 articles (HTTP 200)
+
+❌ OrthoBuzz (JBJS)
+   └─ error: 0 articles (HTTP 403)
+
+✅ Spine Market Group
+   └─ working: 27 articles (HTTP 200)
+
+⚠️ AAOS Now
+   └─ No RSS feeds configured (URL only)
+
+❌ RSNA News
+   └─ error: 0 articles (HTTP 404)
+
+✅ Diagnostic Imaging
+   └─ working: 30 articles (HTTP 200)
+
+✅ Radiology Today
+   └─ working: 9 articles (HTTP 200)
+
+✅ Imaging Technology News
+   └─ working: 10 articles (HTTP 200)
+
+❌ Interventional News
+   └─ error: 0 articles (HTTP 403)
+
+⚠️ SIR
+   └─ No RSS feeds configured (URL only)
+
+✅ OncLive
+   └─ working: 30 articles (HTTP 200)
+
+✅ Cancer Network News
+   └─ working: 30 articles (HTTP 200)
+
+✅ OncoDaily
+   └─ working: 10 articles (HTTP 200)
+
+❌ ESMO Oncology News
+   └─ error: 0 articles (HTTP 404)
+
+❌ ASCO Post
+   └─ working: 0 articles (HTTP 200)
+
+❌ AGA News
+   └─ error: 0 articles (HTTP 403)
+
+❌ MDEdge GI & Hepatology News
+   └─ working: 0 articles (HTTP 200)
+
+✅ Becker's ASC Gastroenterology & Endoscopy
+   └─ working: 10 articles (HTTP 200)
+
+✅ Urology Times
+   └─ working: 30 articles (HTTP 200)
+
+⚠️ UroToday
+   └─ No RSS feeds configured (URL only)
+
+❌ Renal & Urology News
+   └─ error: 0 articles (HTTP 403)
+
+⚠️ STS Newsroom
+   └─ No RSS feeds configured (URL only)
+
+❌ Chest Physician
+   └─ error: 0 articles (HTTP 403)
+
+✅ Vascular Specialist Online
+   └─ working: 1000 articles (HTTP 200)
+
+❌ Vascular News
+   └─ error: 0 articles (HTTP 403)
+
+❌ Endovascular Today
+   └─ error: 0 articles (HTTP 404)
+
+⚠️ SVS News
+   └─ No RSS feeds configured (URL only)
+
+❌ EyeWire News
+   └─ error: 0 articles (HTTP 404)
+
+❌ Ophthalmology Times
+   └─ error: 0 articles (HTTP 404)
+
+⚠️ AAO Newsroom
+   └─ No RSS feeds configured (URL only)
+
+❌ Review of Ophthalmology
+   └─ error: 0 articles (HTTP 404)
+
+⚠️ Ophthalmology Breaking News
+   └─ No RSS feeds configured (URL only)
+
+❌ ENT & Audiology News
+   └─ working: 0 articles (HTTP 200)
+
+✅ ENT Today
+   └─ working: 10 articles (HTTP 200)
+
+⚠️ AAO-HNS Newsroom
+   └─ No RSS feeds configured (URL only)
+
+❌ JAMA Otolaryngology
+   └─ error: 0 articles (HTTP 403)
+
+⚠️ The Hearing Journal
+   └─ No RSS feeds configured (URL only)
+
+⚠️ Pain Physician Journal
+   └─ No RSS feeds configured (URL only)
+
+⚠️ ASA Monitor
+   └─ No RSS feeds configured (URL only)
+
+⚠️ Anesthesiology (Journal)
+   └─ No RSS feeds configured (URL only)
+
+❌ Emergency Medicine News
+   └─ error: 0 articles (HTTP 403)
+
+❌ ACEP Now
+   └─ error: 0 articles (HTTP 403)
+
+✅ EMCrit
+   └─ working: 40 articles (HTTP 200)
+
+⚠️ Journal of Trauma
+   └─ No RSS feeds configured (URL only)
+
+✅ Becker's Spine Robotics
+   └─ working: 10 articles (HTTP 200)
+
+❌ The Robot Report (Medical Robotics)
+   └─ error: 0 articles (HTTP 403)
+
+⚠️ IJCARS (Springer)
+   └─ No RSS feeds configured (URL only)
+
+⚠️ Intuitive Surgical Newsroom
+   └─ No RSS feeds configured (URL only)
+
+================================================================================
+SUMMARY
+================================================================================
+Total Sites: 76
+✅ Working: 20 (26.3%)
+❌ Errors: 39 (51.3%)
+⚠️  No Feeds: 17 (22.4%)
+📰 Total Articles: 1,362
+
+✅ Detailed results saved to test_results.json
