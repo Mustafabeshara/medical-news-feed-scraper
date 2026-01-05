@@ -98,6 +98,26 @@ async def get_sites() -> List[str]:
     return list(_cache_articles_by_site.keys())
 
 
+def _sort_by_date(articles: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Sort articles by published date, newest first. Articles without dates go last."""
+    def get_date_key(article):
+        pub = article.get('published')
+        if pub:
+            try:
+                # Handle ISO format dates - strip timezone for consistent comparison
+                dt = datetime.fromisoformat(pub.replace('Z', '+00:00'))
+                # Convert to naive datetime for comparison
+                if dt.tzinfo is not None:
+                    dt = dt.replace(tzinfo=None)
+                return dt
+            except (ValueError, TypeError):
+                pass
+        # Return very old date for articles without published date
+        return datetime.min
+
+    return sorted(articles, key=get_date_key, reverse=True)
+
+
 @app.get("/articles")
 async def get_articles(
     site: Optional[str] = Query(None),
@@ -108,6 +128,10 @@ async def get_articles(
     all_articles: List[Dict[str, Any]] = []
     for _, items in _cache_articles_by_site.items():
         all_articles.extend(items)
+
+    # Sort by date (newest first) before filtering
+    all_articles = _sort_by_date(all_articles)
+
     filtered = filter_articles(all_articles, site=site, q=q, limit=limit)
     return {
         "last_refresh": _cache_last_refresh,
@@ -130,6 +154,8 @@ def _get_filtered_articles(site: Optional[str], q: Optional[str], limit: int) ->
     all_articles: List[Dict[str, Any]] = []
     for _, items in _cache_articles_by_site.items():
         all_articles.extend(items)
+    # Sort by date (newest first) before filtering
+    all_articles = _sort_by_date(all_articles)
     return filter_articles(all_articles, site=site, q=q, limit=limit)
 
 
