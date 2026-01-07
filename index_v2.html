@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Medical News Feed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary: #0066cc;
+        --primary-dark: #0052a3;
+        --secondary: #6c757d;
+        --success: #28a745;
+        --danger: #dc3545;
+        --warning: #ffc107;
+        --info: #17a2b8;
+        --light: #f8f9fa;
+        --dark: #343a40;
+        --bg: #f5f7fa;
+        --card-bg: #ffffff;
+        --text: #1a1a2e;
+        --text-muted: #6c757d;
+        --border: #e1e5eb;
+        --shadow: 0 2px 8px rgba(0,0,0,0.08);
+        --shadow-hover: 0 8px 24px rgba(0,0,0,0.12);
+        --radius: 12px;
+        --transition: all 0.3s ease;
+      }
+
+      [data-theme="dark"] {
+        --bg: #0d1117;
+        --card-bg: #161b22;
+        --text: #e6edf3;
+        --text-muted: #8b949e;
+        --border: #30363d;
+        --shadow: 0 2px 8px rgba(0,0,0,0.3);
+        --shadow-hover: 0 8px 24px rgba(0,0,0,0.4);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        min-height: 100vh;
+      }
+
+      /* Header */
+      header {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        color: white;
+        padding: 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+
+      .header-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 16px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .logo-icon {
+        width: 40px;
+        height: 40px;
+        background: rgba(255,255,255,0.2);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+      }
+
+      .logo h1 {
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+      }
+
+      .header-stats {
+        display: flex;
+        gap: 24px;
+        font-size: 14px;
+      }
+
+      .stat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .stat-value {
+        font-size: 20px;
+        font-weight: 700;
+      }
+
+      .stat-label {
+        font-size: 11px;
+        opacity: 0.8;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .header-actions {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .theme-toggle {
+        background: rgba(255,255,255,0.2);
+        border: none;
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 18px;
+        transition: var(--transition);
+      }
+
+      .theme-toggle:hover {
+        background: rgba(255,255,255,0.3);
+      }
+
+      /* Main Container */
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 24px;
+      }
+
+      /* Controls */
+      .controls {
+        background: var(--card-bg);
+        border-radius: var(--radius);
+        padding: 20px;
+        margin-bottom: 24px;
+        box-shadow: var(--shadow);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .search-box {
+        flex: 1;
+        min-width: 200px;
+        position: relative;
+      }
+
+      .search-box input {
+        width: 100%;
+        padding: 12px 16px 12px 44px;
+        border: 2px solid var(--border);
+        border-radius: 10px;
+        font-size: 15px;
+        background: var(--bg);
+        color: var(--text);
+        transition: var(--transition);
+      }
+
+      .search-box input:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+      }
+
+      .search-box::before {
+        content: "🔍";
+        position: absolute;
+        left: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 16px;
+      }
+
+      select {
+        padding: 12px 16px;
+        border: 2px solid var(--border);
+        border-radius: 10px;
+        font-size: 15px;
+        background: var(--bg);
+        color: var(--text);
+        cursor: pointer;
+        min-width: 160px;
+        transition: var(--transition);
+      }
+
+      select:focus {
+        outline: none;
+        border-color: var(--primary);
+      }
+
+      .btn {
+        padding: 12px 20px;
+        border: none;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .btn-primary {
+        background: var(--primary);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: var(--primary-dark);
+        transform: translateY(-1px);
+      }
+
+      .btn-success {
+        background: var(--success);
+        color: white;
+      }
+
+      .btn-success:hover {
+        background: #218838;
+      }
+
+      .btn-danger {
+        background: var(--danger);
+        color: white;
+      }
+
+      .btn-danger:hover {
+        background: #c82333;
+      }
+
+      /* Tabs */
+      .tabs {
+        display: flex;
+        gap: 4px;
+        background: var(--bg);
+        padding: 4px;
+        border-radius: 10px;
+        margin-bottom: 24px;
+      }
+
+      .tab {
+        padding: 10px 20px;
+        border: none;
+        background: transparent;
+        color: var(--text-muted);
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: var(--transition);
+      }
+
+      .tab:hover {
+        color: var(--text);
+        background: var(--card-bg);
+      }
+
+      .tab.active {
+        background: var(--card-bg);
+        color: var(--primary);
+        box-shadow: var(--shadow);
+      }
+
+      /* Status Bar */
+      .status-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding: 0 4px;
+      }
+
+      .status-text {
+        font-size: 14px;
+        color: var(--text-muted);
+      }
+
+      .view-toggle {
+        display: flex;
+        gap: 4px;
+        background: var(--bg);
+        padding: 4px;
+        border-radius: 8px;
+      }
+
+      .view-btn {
+        padding: 8px 12px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        border-radius: 6px;
+        font-size: 16px;
+        transition: var(--transition);
+      }
+
+      .view-btn.active {
+        background: var(--card-bg);
+        box-shadow: var(--shadow);
+      }
+
+      /* Grid */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        gap: 20px;
+      }
+
+      .grid.list-view {
+        grid-template-columns: 1fr;
+      }
+
+      /* Card */
+      .card {
+        background: var(--card-bg);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        transition: var(--transition);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .card-image {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+
+      .card-image.placeholder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 48px;
+        opacity: 0.5;
+      }
+
+      .card-content {
+        padding: 20px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card-source {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+
+      .source-badge {
+        background: var(--primary);
+        color: white;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .card-date {
+        font-size: 12px;
+        color: var(--text-muted);
+      }
+
+      .card-title {
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 1.4;
+        margin-bottom: 10px;
+        color: var(--text);
+      }
+
+      .card-title a {
+        color: inherit;
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      .card-title a:hover {
+        color: var(--primary);
+      }
+
+      .card-summary {
+        font-size: 14px;
+        color: var(--text-muted);
+        line-height: 1.6;
+        margin-bottom: 16px;
+        flex: 1;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      /* Entity Tags */
+      .entity-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: auto;
+        padding-top: 12px;
+        border-top: 1px solid var(--border);
+      }
+
+      .entity-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .entity-tag.company {
+        background: rgba(0, 102, 204, 0.1);
+        color: var(--primary);
+        border: 1px solid rgba(0, 102, 204, 0.2);
+      }
+
+      .entity-tag.company:hover {
+        background: rgba(0, 102, 204, 0.2);
+      }
+
+      .entity-tag.product {
+        background: rgba(40, 167, 69, 0.1);
+        color: var(--success);
+        border: 1px solid rgba(40, 167, 69, 0.2);
+      }
+
+      .entity-tag.product:hover {
+        background: rgba(40, 167, 69, 0.2);
+      }
+
+      .entity-tag .ticker {
+        background: rgba(0,0,0,0.1);
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 10px;
+        margin-left: 4px;
+      }
+
+      .entity-tag .confidence {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        margin-right: 2px;
+      }
+
+      .confidence.high { background: var(--success); }
+      .confidence.medium { background: var(--warning); }
+      .confidence.low { background: var(--danger); }
+
+      /* Sentiment Indicator */
+      .sentiment {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 11px;
+        padding: 2px 8px;
+        border-radius: 4px;
+        margin-left: auto;
+      }
+
+      .sentiment.positive {
+        background: rgba(40, 167, 69, 0.1);
+        color: var(--success);
+      }
+
+      .sentiment.negative {
+        background: rgba(220, 53, 69, 0.1);
+        color: var(--danger);
+      }
+
+      .sentiment.neutral {
+        background: rgba(108, 117, 125, 0.1);
+        color: var(--secondary);
+      }
+
+      /* Entity Panel */
+      .entity-panel {
+        background: var(--card-bg);
+        border-radius: var(--radius);
+        padding: 20px;
+        margin-bottom: 24px;
+        box-shadow: var(--shadow);
+      }
+
+      .entity-panel h3 {
+        font-size: 16px;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .entity-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .entity-chip {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 14px;
+        background: var(--bg);
+        border-radius: 20px;
+        font-size: 13px;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .entity-chip:hover {
+        background: var(--primary);
+        color: white;
+      }
+
+      .entity-chip .count {
+        background: rgba(0,0,0,0.1);
+        padding: 2px 8px;
+        border-radius: 10px;
+        font-size: 11px;
+        font-weight: 600;
+      }
+
+      /* Loading Skeleton */
+      .skeleton {
+        background: linear-gradient(90deg, var(--bg) 25%, var(--border) 50%, var(--bg) 75%);
+        background-size: 200% 100%;
+        animation: skeleton-loading 1.5s infinite;
+        border-radius: 8px;
+      }
+
+      @keyframes skeleton-loading {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+      }
+
+      .skeleton-card {
+        background: var(--card-bg);
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .skeleton-image {
+        height: 180px;
+      }
+
+      .skeleton-content {
+        padding: 20px;
+      }
+
+      .skeleton-title {
+        height: 24px;
+        margin-bottom: 12px;
+        width: 80%;
+      }
+
+      .skeleton-text {
+        height: 14px;
+        margin-bottom: 8px;
+      }
+
+      .skeleton-text:last-child {
+        width: 60%;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 40px 24px;
+        color: var(--text-muted);
+        font-size: 13px;
+        border-top: 1px solid var(--border);
+        margin-top: 40px;
+      }
+
+      footer a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .header-content {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .header-stats {
+          order: 3;
+          width: 100%;
+          justify-content: center;
+        }
+
+        .controls {
+          flex-direction: column;
+        }
+
+        .search-box {
+          width: 100%;
+        }
+
+        select, .btn {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .tabs {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+      }
+
+      /* Toast Notification */
+      .toast {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        background: var(--dark);
+        color: white;
+        padding: 16px 24px;
+        border-radius: 10px;
+        box-shadow: var(--shadow-hover);
+        z-index: 1000;
+        animation: slideIn 0.3s ease;
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateY(100px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      /* Empty State */
+      .empty-state {
+        text-align: center;
+        padding: 60px 20px;
+        color: var(--text-muted);
+      }
+
+      .empty-state-icon {
+        font-size: 64px;
+        margin-bottom: 16px;
+        opacity: 0.5;
+      }
+
+      .empty-state h3 {
+        font-size: 20px;
+        margin-bottom: 8px;
+        color: var(--text);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <div class="logo">
+          <div class="logo-icon">📰</div>
+          <h1>Medical News Feed</h1>
+        </div>
+        <div class="header-stats">
+          <div class="stat">
+            <span class="stat-value" id="articleCount">-</span>
+            <span class="stat-label">Articles</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value" id="sourceCount">-</span>
+            <span class="stat-label">Sources</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value" id="companyCount">-</span>
+            <span class="stat-label">Companies</span>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">🌙</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <!-- Controls -->
+      <div class="controls">
+        <div class="search-box">
+          <input type="text" id="q" placeholder="Search articles, companies, products..." />
+        </div>
+        <select id="site" title="Filter by source">
+          <option value="">All Sources</option>
+        </select>
+        <select id="entityFilter" title="Filter by company/product">
+          <option value="">All Entities</option>
+        </select>
+        <input type="number" id="limit" min="1" max="500" value="50" style="width: 80px; padding: 12px; border: 2px solid var(--border); border-radius: 10px; font-size: 15px; background: var(--bg); color: var(--text);" title="Number of articles" />
+        <button class="btn btn-primary" id="refresh">
+          <span>🔄</span> Refresh
+        </button>
+        <button class="btn btn-success" id="exportWord">
+          <span>📄</span> Word
+        </button>
+        <button class="btn btn-danger" id="exportPdf">
+          <span>📕</span> PDF
+        </button>
+      </div>
+
+      <!-- Entity Panel -->
+      <div class="entity-panel" id="entityPanel" style="display: none;">
+        <h3>🏢 Trending Companies</h3>
+        <div class="entity-list" id="trendingCompanies"></div>
+      </div>
+
+      <!-- Status Bar -->
+      <div class="status-bar">
+        <span class="status-text" id="status">Loading articles...</span>
+        <div class="view-toggle">
+          <button class="view-btn active" id="gridView" title="Grid view">⊞</button>
+          <button class="view-btn" id="listView" title="List view">☰</button>
+        </div>
+      </div>
+
+      <!-- Article Grid -->
+      <div class="grid" id="grid">
+        <!-- Loading skeletons -->
+        <div class="skeleton-card">
+          <div class="skeleton skeleton-image"></div>
+          <div class="skeleton-content">
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-text"></div>
+            <div class="skeleton skeleton-text"></div>
+            <div class="skeleton skeleton-text"></div>
+          </div>
+        </div>
+        <div class="skeleton-card">
+          <div class="skeleton skeleton-image"></div>
+          <div class="skeleton-content">
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-text"></div>
+            <div class="skeleton skeleton-text"></div>
+            <div class="skeleton skeleton-text"></div>
+          </div>
+        </div>
+        <div class="skeleton-card">
+          <div class="skeleton skeleton-image"></div>
+          <div class="skeleton-content">
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-text"></div>
+            <div class="skeleton skeleton-text"></div>
+            <div class="skeleton skeleton-text"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Built with FastAPI · Powered by 75+ Medical News Sources</p>
+      <p style="margin-top: 8px;">
+        <a href="/docs">API Documentation</a> · 
+        <a href="/health">Health Status</a>
+      </p>
+    </footer>
+
+    <script>
+      // State
+      let articles = [];
+      let entityStats = {};
+      let currentView = 'grid';
+
+      // Theme toggle
+      const themeToggle = document.getElementById('themeToggle');
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+      themeToggle.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        themeToggle.textContent = next === 'dark' ? '☀️' : '🌙';
+      });
+
+      // View toggle
+      document.getElementById('gridView').addEventListener('click', () => {
+        currentView = 'grid';
+        document.getElementById('grid').classList.remove('list-view');
+        document.getElementById('gridView').classList.add('active');
+        document.getElementById('listView').classList.remove('active');
+      });
+
+      document.getElementById('listView').addEventListener('click', () => {
+        currentView = 'list';
+        document.getElementById('grid').classList.add('list-view');
+        document.getElementById('listView').classList.add('active');
+        document.getElementById('gridView').classList.remove('active');
+      });
+
+      // Escape HTML
+      function esc(s) {
+        return (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      }
+
+      // Format date
+      function formatDate(dateStr) {
+        if (!dateStr) return '';
+        try {
+          const date = new Date(dateStr);
+          const now = new Date();
+          const diff = now - date;
+          const hours = Math.floor(diff / (1000 * 60 * 60));
+          const days = Math.floor(hours / 24);
+          
+          if (hours < 1) return 'Just now';
+          if (hours < 24) return `${hours}h ago`;
+          if (days < 7) return `${days}d ago`;
+          return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+        } catch {
+          return '';
+        }
+      }
+
+      // Get confidence class
+      function getConfidenceClass(confidence) {
+        if (confidence >= 0.8) return 'high';
+        if (confidence >= 0.5) return 'medium';
+        return 'low';
+      }
+
+      // Load sites
+      async function loadSites() {
+        try {
+          const res = await fetch('/sites');
+          const sites = await res.json();
+          const sel = document.getElementById('site');
+          sel.innerHTML = '<option value="">All Sources</option>' + 
+            sites.map(s => `<option value="${esc(s)}">${esc(s)}</option>`).join('');
+          document.getElementById('sourceCount').textContent = sites.length;
+        } catch (e) {
+          console.error('Failed to load sites:', e);
+        }
+      }
+
+      // Load articles
+      async function loadArticles() {
+        const site = document.getElementById('site').value;
+        const q = document.getElementById('q').value;
+        const limit = document.getElementById('limit').value || 50;
+        const entityFilter = document.getElementById('entityFilter').value;
+        
+        const params = new URLSearchParams();
+        if (site) params.set('site', site);
+        if (q) params.set('q', q);
+        if (limit) params.set('limit', limit);
+        
+        try {
+          const res = await fetch('/articles?' + params.toString());
+          const data = await res.json();
+          articles = data.articles;
+          
+          // Filter by entity if selected
+          let filteredArticles = articles;
+          if (entityFilter) {
+            filteredArticles = articles.filter(a => 
+              (a.companies || []).includes(entityFilter) || 
+              (a.products || []).includes(entityFilter)
+            );
+          }
+          
+          renderArticles(filteredArticles);
+          updateStats(data);
+          updateEntityPanel(articles);
+        } catch (e) {
+          console.error('Failed to load articles:', e);
+          document.getElementById('grid').innerHTML = `
+            <div class="empty-state">
+              <div class="empty-state-icon">❌</div>
+              <h3>Failed to load articles</h3>
+              <p>Please check your connection and try again.</p>
+            </div>
+          `;
+        }
+      }
+
+      // Render articles
+      function renderArticles(articleList) {
+        const grid = document.getElementById('grid');
+        
+        if (articleList.length === 0) {
+          grid.innerHTML = `
+            <div class="empty-state">
+              <div class="empty-state-icon">📭</div>
+              <h3>No articles found</h3>
+              <p>Try adjusting your search or filters.</p>
+            </div>
+          `;
+          return;
+        }
+        
+        grid.innerHTML = articleList.map(a => {
+          const companies = a.companies || [];
+          const products = a.products || [];
+          const entities = a.entities || {};
+          
+          // Get detailed entity info if available
+          const companyDetails = entities.companies || companies.map(c => ({ name: c, confidence: 0.9 }));
+          const productDetails = entities.products || products.map(p => ({ name: p, confidence: 0.9 }));
+          
+          const entityTags = [
+            ...companyDetails.slice(0, 3).map(c => `
+              <span class="entity-tag company" onclick="filterByEntity('${esc(c.name || c)}')">
+                <span class="confidence ${getConfidenceClass(c.confidence || 0.9)}"></span>
+                ${esc(c.name || c)}
+                ${c.ticker ? `<span class="ticker">${esc(c.ticker)}</span>` : ''}
+              </span>
+            `),
+            ...productDetails.slice(0, 2).map(p => `
+              <span class="entity-tag product" onclick="filterByEntity('${esc(p.name || p)}')">
+                <span class="confidence ${getConfidenceClass(p.confidence || 0.9)}"></span>
+                ${esc(p.name || p)}
+              </span>
+            `)
+          ].join('');
+          
+          const imageHtml = a.image 
+            ? `<img class="card-image" src="${esc(a.image)}" alt="" loading="lazy" onerror="this.classList.add('placeholder'); this.outerHTML='<div class=\\'card-image placeholder\\'>📰</div>'">`
+            : '<div class="card-image placeholder">📰</div>';
+          
+          return `
+            <div class="card">
+              ${imageHtml}
+              <div class="card-content">
+                <div class="card-source">
+                  <span class="source-badge">${esc(a.site || a.source || 'Unknown')}</span>
+                  <span class="card-date">${formatDate(a.published)}</span>
+                </div>
+                <h3 class="card-title">
+                  <a href="${esc(a.link)}" target="_blank" rel="noopener noreferrer">${esc(a.title)}</a>
+                </h3>
+                ${a.summary ? `<p class="card-summary">${esc(a.summary)}</p>` : ''}
+                ${entityTags ? `<div class="entity-tags">${entityTags}</div>` : ''}
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // Update stats
+      function updateStats(data) {
+        const last = new Date((data.last_refresh || 0) * 1000).toLocaleString();
+        document.getElementById('status').textContent = `Showing ${data.count} articles · Last refresh: ${last}`;
+        document.getElementById('articleCount').textContent = data.count;
+        
+        // Count unique companies
+        const allCompanies = new Set();
+        data.articles.forEach(a => {
+          (a.companies || []).forEach(c => allCompanies.add(c));
+        });
+        document.getElementById('companyCount').textContent = allCompanies.size;
+      }
+
+      // Update entity panel
+      function updateEntityPanel(articleList) {
+        const companyCounts = {};
+        articleList.forEach(a => {
+          (a.companies || []).forEach(c => {
+            companyCounts[c] = (companyCounts[c] || 0) + 1;
+          });
+        });
+        
+        const topCompanies = Object.entries(companyCounts)
+          .sort((a, b) => b[1] - a[1])
+          .slice(0, 10);
+        
+        if (topCompanies.length > 0) {
+          document.getElementById('entityPanel').style.display = 'block';
+          document.getElementById('trendingCompanies').innerHTML = topCompanies.map(([name, count]) => `
+            <div class="entity-chip" onclick="filterByEntity('${esc(name)}')">
+              🏢 ${esc(name)}
+              <span class="count">${count}</span>
+            </div>
+          `).join('');
+          
+          // Update entity filter dropdown
+          const entitySelect = document.getElementById('entityFilter');
+          entitySelect.innerHTML = '<option value="">All Entities</option>' +
+            topCompanies.map(([name]) => `<option value="${esc(name)}">${esc(name)}</option>`).join('');
+        }
+      }
+
+      // Filter by entity
+      function filterByEntity(entity) {
+        document.getElementById('entityFilter').value = entity;
+        loadArticles();
+        showToast(`Filtering by: ${entity}`);
+      }
+
+      // Show toast
+      function showToast(message) {
+        const existing = document.querySelector('.toast');
+        if (existing) existing.remove();
+        
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.textContent = message;
+        document.body.appendChild(toast);
+        
+        setTimeout(() => toast.remove(), 3000);
+      }
+
+      // Export functions
+      function exportArticles(format) {
+        const params = new URLSearchParams();
+        const site = document.getElementById('site').value;
+        const q = document.getElementById('q').value;
+        const limit = document.getElementById('limit').value || 50;
+        if (site) params.set('site', site);
+        if (q) params.set('q', q);
+        if (limit) params.set('limit', limit);
+        
+        window.location.href = `/export/${format}?` + params.toString();
+        showToast(`Exporting to ${format.toUpperCase()}...`);
+      }
+
+      // Initialize
+      window.addEventListener('DOMContentLoaded', async () => {
+        await loadSites();
+        await loadArticles();
+        
+        // Event listeners
+        document.getElementById('site').addEventListener('change', loadArticles);
+        document.getElementById('entityFilter').addEventListener('change', loadArticles);
+        document.getElementById('limit').addEventListener('change', loadArticles);
+        document.getElementById('refresh').addEventListener('click', () => {
+          showToast('Refreshing articles...');
+          loadArticles();
+        });
+        
+        // Debounced search
+        let searchTimeout;
+        document.getElementById('q').addEventListener('input', () => {
+          clearTimeout(searchTimeout);
+          searchTimeout = setTimeout(loadArticles, 400);
+        });
+        
+        // Export buttons
+        document.getElementById('exportWord').addEventListener('click', () => exportArticles('word'));
+        document.getElementById('exportPdf').addEventListener('click', () => exportArticles('pdf'));
+      });
+    </script>
+  </body>
+</html>
