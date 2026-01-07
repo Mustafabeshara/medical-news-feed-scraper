@@ -100,7 +100,7 @@ sites:
   - name: Cardiac Interventions Today
     url: https://citoday.com
     feeds:
-      - https://citoday.com/feed/
+      - https://citoday.com/rss
 
   - name: ESC Press Office
     url: https://www.escardio.org/The-ESC/Press-Office
@@ -125,7 +125,7 @@ sites:
   - name: AANS Neurosurgeon
     url: https://www.aans.org/en/AANS-Neurosurgeon
     feeds:
-      - https://www.aans.org/en/AANS-Neurosurgeon/rss
+      - https://www.aans.org/feed/
 
   - name: JAMA Neurology
     feeds:
@@ -185,6 +185,8 @@ sites:
 
   - name: AAOS Now
     url: https://www.aaos.org/aaosnow/
+    feeds:
+      - https://www.aaos.org/rss
 
   # === RADIOLOGY & IMAGING ===
   - name: RSNA News
@@ -262,7 +264,7 @@ sites:
   - name: ASCO Post
     url: https://ascopost.com
     feeds:
-      - https://ascopost.com/feed/
+      - https://ascopost.com/rss
 
   # === GASTROENTEROLOGY ===
   # Gastroenterology & Endoscopy News - RSS discontinued, site blocks scrapers
@@ -332,9 +334,9 @@ sites:
     url: https://www.sts.org/news/newsroom
 
   - name: Chest Physician
-    url: https://www.mdedge.com/chestphysician
+    url: https://www.chestphysician.org
     feeds:
-      - https://www.mdedge.com/chestphysician/rss.xml
+      - https://www.chestphysician.org/feed/
 
   # - name: Healio Pulmonology
   #   feeds:
@@ -358,10 +360,12 @@ sites:
   - name: Endovascular Today
     url: https://evtoday.com
     feeds:
-      - https://evtoday.com/feed/
+      - https://evtoday.com/rss
 
   - name: SVS News
     url: https://vascular.org/news
+    feeds:
+      - https://vascular.org/rss.xml
 
   # Journal of Vascular Surgery RSS discontinued
   # - name: Journal of Vascular Surgery
@@ -372,12 +376,12 @@ sites:
   - name: EyeWire News
     url: https://eyewire.news
     feeds:
-      - https://eyewire.news/feed/
+      - https://eyewire.news/rss
 
   - name: Ophthalmology Times
     url: https://www.ophthalmologytimes.com
     feeds:
-      - https://www.ophthalmologytimes.com/rss
+      - https://www.ophthalmologytimes.com/rss.xml
 
   - name: AAO Newsroom
     url: https://www.aao.org/newsroom/news-releases
@@ -393,6 +397,8 @@ sites:
 
   - name: Ophthalmology Breaking News
     url: https://www.ophthalmologybreakingnews.com
+    feeds:
+      - https://www.ophthalmologybreakingnews.com/rss
 
   # === ENT ===
   - name: ENT & Audiology News

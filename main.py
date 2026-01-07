@@ -122,7 +122,8 @@ def _sort_by_date(articles: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 async def get_articles(
     site: Optional[str] = Query(None),
     q: Optional[str] = Query(None),
-    limit: int = Query(50, ge=1, le=500),
+    limit: int = Query(50, ge=1, le=10000),
+    offset: int = Query(0, ge=0),
 ):
     # flatten all articles
     all_articles: List[Dict[str, Any]] = []
@@ -132,10 +133,18 @@ async def get_articles(
     # Sort by date (newest first) before filtering
     all_articles = _sort_by_date(all_articles)
 
-    filtered = filter_articles(all_articles, site=site, q=q, limit=limit)
+    # Apply site/query filter without limit first
+    filtered = filter_articles(all_articles, site=site, q=q, limit=len(all_articles))
+
+    # Apply offset and limit
+    total_count = len(filtered)
+    filtered = filtered[offset:offset + limit]
+
     return {
         "last_refresh": _cache_last_refresh,
+        "total": total_count,
         "count": len(filtered),
+        "offset": offset,
         "articles": filtered,
     }
 
@@ -163,7 +172,7 @@ def _get_filtered_articles(site: Optional[str], q: Optional[str], limit: int) ->
 async def export_word(
     site: Optional[str] = Query(None),
     q: Optional[str] = Query(None),
-    limit: int = Query(50, ge=1, le=500),
+    limit: int = Query(500, ge=1, le=100000),
 ):
     """Export articles to Word document."""
     articles = _get_filtered_articles(site, q, limit)
