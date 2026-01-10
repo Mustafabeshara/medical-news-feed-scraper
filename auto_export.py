@@ -87,7 +87,7 @@ def fetch_articles(limit: int = 1000) -> List[Dict[str, Any]]:
         response = requests.get(
             f"{CONFIG['api_url']}/articles",
             params={"limit": limit},
-            timeout=60
+            timeout=300
         )
         if response.status_code == 200:
             data = response.json()
